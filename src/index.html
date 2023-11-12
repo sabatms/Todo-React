@@ -2,33 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>My React App</title>
+    <title>Todo React</title>
+    <style>
+       .container{
+        width: 468px;
+        margin: auto;
+        margin-top: 10rem;
+       }
+       
+      .form{
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
+       }
+        .form button {
+            background-color: green;
+            color: white;
+        }
+
+        .form button.delete-all{
+          background-color: blue;
+          color: white;
+        }
+
+        .list{
+          padding: 1rem 0;
+        }
+
+        .list .todo{
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #eee;
+        }
+
+        .list .todo .delete{
+          background-color: red;
+          color: white;
+        }
+    </style>
   </head>
   <body>
-    
-    <Btn text ="ورود/ثبت نام" icon ="https://create-react-app.dev/img/logo.svg"/>
-    <Btn text ="مشاهده بروفایل" icon ="https://create-react-app.dev/img/logo.svg"/>
-    <Btn text ="تماس با ما" icon ="https://create-react-app.dev/img/logo.svg"/>
-
-
-
-    <button>
-     <img src="https://create-react-app.dev/img/logo.svg"/> 
-      <span>ورود/ثبت نام</span>
-    </button>
-
-
-    <button>
-      <img src="https://create-react-app.dev/img/logo.svg"/> 
-      <span>مشاهده بروفایل</span>
-    </button>
-
-
-    <button>
-      <img src="https://create-react-app.dev/img/logo.svg"/> 
-       <span>تماس با ما</span>
-    </button>
-
     <div id="app"></div>
     <script type="module" src="index.js"></script>
   </body>
