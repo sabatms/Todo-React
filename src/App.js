@@ -32,9 +32,9 @@ export function App() {
       <Actions />
     </div>
     <div className="list">
-      <Todo title ={todos[0].title} status ={todos[0].status} />
-      <Todo title ={todos[1].title} status ={todos[1].status}/>
-      <Todo title ={todos[2].title} status ={todos[2].status}/>
+      {todos.map((todo) => {
+        return < Todo title={todo.title} status ={todo.status}/>
+      })}
       </div>
     </div> 
   );
