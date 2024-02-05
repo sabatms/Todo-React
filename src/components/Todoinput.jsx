@@ -1,19 +1,36 @@
-function onAddItem(){
+import { useState } from "react";
+
+function onAddItem() {
           console.log("clicked")
 }
 
-function onType(e){
-          const char = e.key
-          console.log(char )
-}
+let my_string = "folan";
+
+function TodoInput() {
+const my_string_react = useState("folan");
 
 
-function TodoInput(){
-          return(
+
+          return (
           <div>
-          <input   onKeyUp={onType} type="text" placeholder="Write your Todo.." id="title" />
-          <button  onClick={onAddItem} id="save-btn">Save</button>
+          <h1> Your todo title : {my_string} </h1>
+
+          <input 
+          onKeyUp={(e) =>{
+          const char= e.key
+          my_string = my_string + char;
+
+          console.log(my_string)
+          }} 
+          type="text"
+          placeholder="Write your todo ..."
+          id="title"
+          />
+          <button onClick={onAddItem} id="save-btn">
+           Save
+          </button>
           </div>
           );
-}
+};
+
 export default TodoInput;
