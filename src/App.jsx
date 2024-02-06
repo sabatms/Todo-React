@@ -1,4 +1,4 @@
-import Actions from "./components/Actions";
+import { useState } from "react";
 import Todo from "./components/Todo";
 import TodoInput from "./components/Todoinput";
 import Actions from "./components/Actions";
@@ -26,21 +26,31 @@ const todos = [
   },
 ];
 
-// todos[0].title
-// todos[1].title
-// todos[2].title
-
 export function App() {
+  const [list , setList] = useState([]) ;
+
+  console.log("render")
+
   return (
     <div className="container">
     <div className="form">
-      <TodoInput />
+      <TodoInput
+       handleSubmit = {(value) => {
+        setList([
+          ...list,
+          {
+            title : value,
+            status :false,
+          },
+        ]);
+      }}
+      />
         <br />
         <br />
       <Actions />
     </div>
     <div className="list">
-      {todos.map((todo) => {
+      {list.map((todo) => {
         return < Todo title={todo.title} status ={todo.status}/>
       })}
       </div>
