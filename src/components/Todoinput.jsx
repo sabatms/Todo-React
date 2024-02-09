@@ -4,8 +4,6 @@ function onAddItem() {
           console.log("clicked")
 }
 
-//let my_string = "folan";
-
 function TodoInput(props) {
 const [my_string , update_string] = useState("");
           return (
@@ -14,10 +12,16 @@ const [my_string , update_string] = useState("");
 
           <input 
           onKeyUp={(e) =>{
+          const exclude = ["Escape","Shift", "7"];
+          if(e.key === "Backspace"){
+            return;
+          }else if (exclude.includes(e.key)){ 
+            return;
+          }
           const char= e.key
-         // my_string = my_string + char;
-
-         update_string(my_string + char)
+          const nextString = my_string + char ;
+          console.log(char , nextString);
+          update_string(nextString);
           }} 
           type="text"
           placeholder="Write your todo ..."
