@@ -13,17 +13,7 @@ export function App() {
   return (
     <div className="container">
     <div className="form">
-      <TodoInput
-       handleSubmit = {(value) => {
-        setList([
-          ...list,
-          {
-            title : value,
-            status :false,
-          },
-        ]);
-      }}
-      />
+      <TodoInput/>
         <br />
         <br />
       <Actions />
